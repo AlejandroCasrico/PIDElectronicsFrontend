@@ -1,0 +1,38 @@
+<div class="max-w-4xl mx-auto">
+  <h1 class="mb-4 text-2xl font-bold">Panel de Clientes</h1>
+
+  <div>
+    <h2 class="mb-2 text-lg font-semibold">Tabla de Movimientos Bancarios</h2>
+    <table class="min-w-full divide-y divide-gray-200">
+      <thead class="bg-gray-50">
+        <tr>
+          <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">ID movimiento</th>
+          <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">Tipo/Movimiento</th>
+          <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">Cantidad</th>
+          <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">Fecha</th>
+          <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">Usuario</th>
+        </tr>
+      </thead>
+      <tbody class="bg-white divide-y divide-gray-200">
+        <tr *ngFor="let move of movementData" class="hover:bg-gray-50">
+          <td class="px-6 py-4 whitespace-nowrap">{{ move.id_movement }}</td>
+          <td class="px-6 py-4 whitespace-nowrap">{{ move.type_movement }}</td>
+          <td class="px-6 py-4 whitespace-nowrap">${{ move.amount }}</td>
+          <td class="px-6 py-4 whitespace-nowrap">{{ move.dateTime | date: 'dd/MM/yyyy HH:mm:ss' }}</td>
+          <td class="px-6 py-4 whitespace-nowrap">{{ move.user_id }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="flex mt-8">
+    <button routerLink="form-movement" class="px-4 py-2 mr-4 text-white bg-blue-900 rounded-md hover:bg-cyan-600 focus:outline-none focus:ring-2 focus:ring-blue-500">Hacer un depósito</button>
+    <button routerLink="form-retiro" class="px-4 py-2 text-white bg-red-500 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">Hacer un retiro</button>
+    <button (click)="exportToExcel()" class="flex items-center px-4 py-2 font-bold text-white bg-green-500 rounded hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd" d="M9.95 13.586a1 1 0 01-1.414 0l-3-3a1 1 0 011.414-1.414L9 11.586V5a1 1 0 012 0v6.586l2.536-2.536a1 1 0 111.414 1.414l-3 3zM16 17a1 1 0 100-2 1 1 0 000 2zM4 17a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
+      </svg>
+      Exportar a Excel
+    </button>
+  </div>
+</div>
