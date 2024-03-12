@@ -1,3 +1,4 @@
+#Instalar npm install antes
 # PiDtec
 
 Se creo un proyecto de angular con interfaces para usuarios y movimientos, donde en 2 carpetas se dividieron el administrador y el cliente y en cada una se mostraba la informacion por medio de tablas y formularios si eran requeridos. Se crearon dos servicios para la consulta a los end points y se inyectaron las dependencias, se usaro formularios, pipes, tailwinds, interfaces, sistema de enrutamiento con load children .
