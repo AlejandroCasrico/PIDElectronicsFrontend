@@ -52,7 +52,7 @@
                   <td class="px-6 py-4 whitespace-nowrap">{{ move.id_movement }}</td>
                   <td class="px-6 py-4 whitespace-nowrap">{{ move.type_movement }}</td>
                   <td class="px-6 py-4 whitespace-nowrap">${{move.amount }}</td>
-                  <td class="px-6 py-4 whitespace-nowrap">{{ move.dateTime }}</td>
+                  <td class="px-6 py-4 whitespace-nowrap">{{ move.dateTime | date: 'dd/MM/yyyy HH:mm:ss' }}</td>
                   <td class="px-6 py-4 whitespace-nowrap">{{ move.user_id }}</td>
                 </tr>
               </tbody>
